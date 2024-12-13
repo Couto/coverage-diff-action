@@ -9,6 +9,8 @@ const ICONS = {
 const CRITERIAS = ["lines", "branches", "functions", "statements"];
 
 function _renderPct(pct, addSign = true) {
+  if (!pct.toFixed) { return pct }
+  
   if (addSign && pct >= 0) {
     return `+${pct.toFixed(2)}%`;
   }
